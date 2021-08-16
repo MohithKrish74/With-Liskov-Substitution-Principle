@@ -1,58 +1,33 @@
 package com.keyword;
 
-class HaveEngine
+class Birds
 {
-    public void haveEngine()
+    public void fly()
     {
-        System.out.println("Engine is present");
+        System.out.println("Birds Classification");
+    }
+}
+class FlyingBird extends Birds
+{
+    public void fly()
+    {
+        System.out.println("Birds fly");
     }
 }
 
-class DoesNotHaveEngine
+class Ducks extends FlyingBird
 {
-    public void doesNotHaveEngine()
+    public void fly()
     {
-        System.out.println("Engine is absent");
+        System.out.println("Duck Flies");
     }
 }
 
-class Bikes extends HaveEngine  // child class substitute parent class perfectly.
+class Ostriches extends Birds // Child class is completely replacing Base class
 {
-    public void bikeEngine()
+    public void fly()
     {
-        System.out.println("Bike has Engine");
-    }
-}
-
-class Cars extends HaveEngine
-{
-    public void carEngine()
-    {
-        System.out.println("Car has Engine");
-    }
-}
-
-class Trucks extends HaveEngine
-{
-    public void truckEngine()
-    {
-        System.out.println("Truck has Engine");
-    }
-}
-
-class Ships extends HaveEngine
-{
-    public void shipEngine()
-    {
-        System.out.println("Ship has Engine");
-    }
-}
-
-class Cycles extends DoesNotHaveEngine
-{
-    public void cycle()
-    {
-        System.out.println("Cycle has no Engine");
+        System.out.println("Ostriches wont Flies");
     }
 }
 
@@ -60,16 +35,10 @@ public class LiskovSubstitutionPrincipleUsing
 {
     public static void main(String[] args)
     {
-        Bikes bike = new Bikes();
-        Cars car = new Cars();
-        Trucks truck = new Trucks();
-        Ships ship = new Ships();
-        Cycles bicycle = new Cycles();
-        bike.bikeEngine();
-        car.carEngine();
-        truck.truckEngine();
-        ship.shipEngine();
-        bicycle.cycle();
+        Ducks ducks = new Ducks();
+        Ostriches ostriches = new Ostriches();
+        ducks.fly();
+        ostriches.fly();
 
     }
 }
